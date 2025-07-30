@@ -1,0 +1,13 @@
+API Endpoint:
+POST /api/scenario/generate-scenario
+
+Request Headers:
+Content-Type: application/json
+Accept: application/json
+
+Error Response (404 Not Found):
+"No matching scenario found."
+
+## Notes
+- You can use Postman or curl to test the endpoint.
+- The service uses an in-memory H2 database; make sure it's preloaded with scenario data.
