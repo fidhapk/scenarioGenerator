@@ -12,10 +12,14 @@ public class ScenarioRepositoryTest {
     @Test
     public void testFindScenarios_ReturnsMatchingEntries() throws Exception {
         ScenarioRepository repo = new ScenarioRepository();
+        
+        // Attempt to fetch entries for a known valid combination
         List<ScenarioEntry> results = repo.findScenarios("java", "developer", "cloud");
 
         assertNotNull(results);
         assertFalse(results.isEmpty());
+        
+        // Verify that all returned entries match the expected criteria
         for (ScenarioEntry entry : results) {
             assertEquals("java", entry.getTechnology());
             assertEquals("developer", entry.getRole());
@@ -23,6 +27,8 @@ public class ScenarioRepositoryTest {
         }
     }
 
+    // This test ensures that the repository returns an empty list 
+    // when there are no matching entries for the given input.
     @Test
     public void testFindScenarios_NoMatch_ReturnsEmptyList() throws Exception {
         ScenarioRepository repo = new ScenarioRepository();
