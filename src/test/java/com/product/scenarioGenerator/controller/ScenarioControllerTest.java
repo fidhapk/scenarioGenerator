@@ -13,6 +13,7 @@ import static org.mockito.Mockito.*;
 
 public class ScenarioControllerTest {
 
+    // Test case: Valid scenario request returns a matching scenario.
     @Test
     public void testGenerateScenario_Success() throws Exception {
         ScenarioRequest request = new ScenarioRequest();
@@ -36,6 +37,7 @@ public class ScenarioControllerTest {
         assertEquals(response, entity.getBody());
     }
 
+    // Test case: No matching scenario is found for the request.
     @Test
     public void testGenerateScenario_NotFound() throws Exception {
         ScenarioRequest request = new ScenarioRequest();
